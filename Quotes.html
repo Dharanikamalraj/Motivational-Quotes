@@ -1,0 +1,85 @@
+<html>
+<head>
+  <title>Daily Motivation</title>
+  <style>
+    body {
+      background: #f0f4f8;
+      font-family: 'Segoe UI', Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+    }
+    h1 {
+      color: #2e3a59;
+      margin-bottom: 10px;
+    }
+    #quote-box {
+      background: #fff;
+      padding: 30px 40px;
+      border-radius: 12px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+      text-align: center;
+      margin-bottom: 20px;
+      min-width: 300px;
+    }
+    #quote {
+      font-size: 1.3em;
+      color: #444;
+      margin-bottom: 10px;
+    }
+    #author {
+      font-size: 1em;
+      color: #888;
+      margin-bottom: 20px;
+    }
+    button {
+      padding: 10px 25px;
+      font-size: 1em;
+      background: #2e3a59;
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    button:hover {
+      background: #4b5d7a;
+    }
+    footer {
+      margin-top: 40px;
+      color: #aaa;
+      font-size: 0.9em;
+    }
+  </style>
+</head>
+<body>
+  <h1>Daily Motivation</h1>
+  <div id="quote-box">
+    <div id="quote">Click the button for a motivational quote!</div>
+    <div id="author"></div>
+    <button onclick="showQuote()">Show Quote</button>
+  </div>
+  <footer>
+    Made with ❤️ by a Dharani Kamalraj
+  </footer>
+  <script>
+    const quotes = [
+      { text: "The best way to get started is to quit talking and begin doing.", author: "Walt Disney" },
+      { text: "Success is not in what you have, but who you are.", author: "Bo Bennett" },
+      { text: "Believe you can and you're halfway there.", author: "Theodore Roosevelt" },
+      { text: "Your limitation—it’s only your imagination.", author: "Unknown" },
+      { text: "Push yourself, because no one else is going to do it for you.", author: "Unknown" },
+      { text: "Dream it. Wish it. Do it.", author: "Unknown" }
+    ];
+
+    function showQuote() {
+      const randomIndex = Math.floor(Math.random() * quotes.length);
+      document.getElementById('quote').textContent = quotes[randomIndex].text;
+      document.getElementById('author').textContent = "- " + quotes[randomIndex].author;
+    }
+  </script>
+</body>
+</html>
